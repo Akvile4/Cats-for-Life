@@ -6,7 +6,6 @@ import './navbar.css'
 const Navbar = ({ basketItems, removeItemFromBasket }) => {
 	return (
 		<div className="navBarWrap">
-
 		<div className="wrapper">
 			<h3 className="title">
 				<FaCat />
@@ -25,7 +24,6 @@ const Navbar = ({ basketItems, removeItemFromBasket }) => {
 							removeItemFromBasket={removeItemFromBasket}
 						/>
 						Cart <p className='notification'>{basketItems.length}</p>
-
 					</h3>
 				</div>
 				<div className="chekout">
@@ -40,7 +38,6 @@ const Navbar = ({ basketItems, removeItemFromBasket }) => {
 			<img className="catgroupimg" src="https://media.istockphoto.com/photos/row-of-four-british-shorthair-cats-kittens-sitting-isolated-on-white-picture-id824824466?k=20&m=824824466&s=612x612&w=0&h=C8yq4rZsj2cugrKKDiJk4Hp96dnWvoiHFJgxWXet9Fs=" alt="group of kittens" />
 		</div>
 	</div>
-
 	);
 };
 
