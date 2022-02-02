@@ -55,6 +55,7 @@ body {
 	box-shadow: 8px 8px 2px 1px rgba(0, 0, 255, 0.308);
   }
 
+
 .catlist {
 	display: grid;
 	grid-template-columns: repeat(4, auto);
@@ -155,6 +156,9 @@ body.active-modal {
 	color: white;
 	background: rgba(0, 0, 0, 0.877);
 	cursor: pointer;
+	font-family:cursive;
+	transition: 0.5s smooth;
+	margin-top: 5px;
 }
 
 .cartButton:hover{
@@ -163,6 +167,7 @@ body.active-modal {
 	border: solid rgba(0, 255, 255, 0.555) 3px;
 	transform:scale(1.05);
 }
+
 body.active-modal {
 	overflow-y: hidden;
 }
@@ -254,6 +259,7 @@ body.active-modal {
 .total{
 	color: rgb(218, 33, 33);
 	text-align: center;
+
 }
 .bin{
 	cursor: pointer;
