@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FaShoppingCart } from 'react-icons/fa';
+import { FaShoppingCart, FaTrashAlt, FaRegWindowClose } from 'react-icons/fa';
 
 //pass in props to the component using destructuring (curly braces)
 const Modal = ({ basketItems, removeItemFromBasket }) => {
@@ -8,6 +8,8 @@ const Modal = ({ basketItems, removeItemFromBasket }) => {
 	const toggleModal = () => {
 		setModal(!modal);
 	};
+	const count = basketItems.length;
+	console.log(count);
 	// function to add total in basket
 	const basketTotal = basketItems.reduce((accumulator, currentItem) => {
 		accumulator += parseFloat(currentItem.price);
@@ -23,6 +25,7 @@ const Modal = ({ basketItems, removeItemFromBasket }) => {
 	//to fixed method adds 2 zeros to the right of the decimal.
 	return (
 		<>
+
 			<div onClick={toggleModal}>
 				<FaShoppingCart />
 			</div>
@@ -31,23 +34,27 @@ const Modal = ({ basketItems, removeItemFromBasket }) => {
 				<div className="modal">
 					<div onClick={toggleModal} className="overlay"></div>
 					<div className="modal-content">
-						<h2>Shopping Basket</h2>
+						<h2 className='shop'>Shopping Basket</h2>
 						<ul>
 							{basketItems.map((item) => (
-								<li>
-									{item.catName} - {item.price} -{' '}
-									<span
+								<li className='itemList'>
+									{item.catName} - £{item.price} -{' '}
+									<span className='bin'
 										onClick={() => {
 											removeItemFromBasket(item);
 										}}>
-										Remove
+										<FaTrashAlt className='bin'/>
 									</span>
 								</li>
 							))}
 						</ul>
-						{basketTotal.toFixed(2)}
+						<div className="total">
+							Total = £{basketTotal.toFixed(2)}
+						</div>
 						<button className="close-modal" onClick={toggleModal}>
-							CLOSE
+							<h2>
+								<FaRegWindowClose/>
+							</h2>
 						</button>
 					</div>
 				</div>
